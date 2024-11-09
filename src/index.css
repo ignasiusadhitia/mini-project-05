@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --black: #303030;
+  --white: #f2f2f2;
+  --primary: #001f2b;
+  --gray: #dcdcdc;
+  --danger: #ff302e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--black);
+}
+
+body.dark {
+  --background-color: var(--black);
+  --text-color: var(--white);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --background-color: #var(--black);
+    --text-color: var(--white);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --background-color: var(--white);
+    --text-color: var(--black);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #003348;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.navbar {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-container {
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar-buttons button {
+  background-color: transparent;
+  width: fit-content;
+  padding: 0;
+}
+
+.navbar-buttons .theme-toggle {
+  transition: transform 0.3s ease;
+}
+
+.navbar-buttons .theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--black);
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: 1px solid var(--primary);
+}
+
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--black);
+  font-size: 1rem;
+  width: 100%;
+}
+
+textarea:focus {
+  outline: 1px solid var(--primary);
+}
+
+select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--black);
+  font-size: 1rem;
+  width: 100%;
+}
+
+select:focus {
+  outline: 1px solid var(--primary);
+}
+
+.page-wrapper {
+  margin: 56px 0;
+  min-height: 70vh;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.table-header {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form {
+  display: flex;
+  position: relative;
+}
+
+.button-group {
+  display: flex;
+}
+
+.button-group .clear-button {
+  position: absolute;
+  left: 160px;
+  border: none;
+  background-color: transparent;
+}
+
+.button-group .clear-button:hover {
+  background-color: transparent;
+}
+
+.search-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+.clear-button {
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.clear-button:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.inner-wrapper {
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.loading-dots {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: inline-block;
+  animation: loading 0.6s infinite alternate;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+}
+
+.form-back-button,
+.detail-back-button {
+  margin-bottom: 12px;
+  display: flex;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: var(--primary);
+  width: fit-content;
+}
+
+.form-back-button:hover,
+.detail-back-button:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.not-found-page-wrapper {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.not-found-page-wrapper p {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.not-found-page-wrapper button {
+  margin-top: 12px;
+}
+
+.student-form-wrapper {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-group-wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 12px;
+}
+.radio-group label {
+  min-width: fit-content;
+}
+
+input[type="radio"]:checked,
+input[type="radio"]:focus {
+  border: none;
+  outline: none;
+}
+
+.form-submit-button {
+  margin-top: 12px;
+}
+
+.invalid-input {
+  border: 1px solid var(--danger);
+}
+
+.invalid-feedback {
+  color: var(--danger);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.table-wrapper {
+  margin-top: 48px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+}
+
+table,
+tr {
+  border: 1px solid var(--black);
+  border-collapse: collapse;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: var(--gray);
+}
+
+tr {
+  height: 48px;
+}
+
+th {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons button {
+  padding: 12px 0;
+  background-color: transparent;
+  color: var(--black);
+  font-weight: normal;
+  transition: transform 0.3s ease;
+}
+
+.action-buttons button:hover {
+  transform: scale(1.1);
+}
+
+.student-detail-wrapper {
+  max-width: 60vw;
+  margin: 54px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .student-table {
+    min-width: 600px;
+  }
+}
