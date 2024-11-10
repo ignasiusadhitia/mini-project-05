@@ -176,7 +176,7 @@ select:focus {
 
 .button-group .clear-button {
   position: absolute;
-  left: 160px;
+  right: 70px;
   border: none;
   background-color: transparent;
 }
