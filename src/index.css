@@ -330,7 +330,6 @@ input[type="radio"]:focus {
 .table-wrapper {
   margin-top: 48px;
   width: 100%;
-  overflow-x: auto;
 }
 
 .student-table {
@@ -394,5 +393,9 @@ th {
 
   .student-table {
     min-width: 600px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
   }
 }
